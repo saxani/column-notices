@@ -2,7 +2,7 @@ import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-  projectId: 'demo-column-frontend-exercise'
+  projectId: 'demo-column-frontend-exercise',
 };
 
 const app = initializeApp(firebaseConfig);
