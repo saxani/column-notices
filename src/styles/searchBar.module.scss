@@ -1,0 +1,35 @@
+@import './colors';
+
+.wrapper {
+  padding: 15px;
+  background-color: $light-grey;
+  border-bottom: 1px solid $mid-grey;
+
+  .inputWrapper {
+    display: flex;
+    height: 30px;
+    max-width: 400px;
+    border: solid 1px $mid-grey;
+    border-radius: 5px;
+    background-color: $white;
+
+    .icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .input {
+      box-sizing: border-box;
+      height: 100%;
+      flex: 1;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

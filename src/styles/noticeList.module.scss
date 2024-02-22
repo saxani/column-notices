@@ -1,0 +1,19 @@
+@import './colors';
+
+.wrapper {
+  border-collapse: collapse;
+  background-color: #fff;
+  table-layout: fixed;
+  width: 100%;
+
+  th,
+  td {
+    border: 1px solid $mid-grey;
+    padding: 15px;
+    text-align: left;
+  }
+
+  th {
+    text-transform: uppercase;
+  }
+}

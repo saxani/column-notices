@@ -45,8 +45,8 @@ Using any development environment you are comfortable with, complete the require
 - [x] The list of notices should be sorted by date of publication in descending order
 - [x] The list of notices should display the title, date of publication, and content preview
 - [x] The list of notices should be paginated with 10 notices per page
-- [ ] Handle loading and error states gracefully
-- [ ] Design a visually appealing and responsive layout for the dashboard. You can use any CSS framework or library of your choice, or write your own styles.
+- [x] Handle loading and error states gracefully
+- [x] Design a visually appealing and responsive layout for the dashboard. You can use any CSS framework or library of your choice, or write your own styles.
 
 ### Testing
 
