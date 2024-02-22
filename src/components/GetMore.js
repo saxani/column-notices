@@ -7,10 +7,10 @@ import getMoreStyles from '../styles/getMore.module.scss';
 const GetMore = ({ handleNext, handlePrevious }) => {
   return (
     <div className={getMoreStyles.wrapper}>
-      <button onClick={handlePrevious}>
+      <button onClick={handlePrevious} aria-label='Previous notices'>
         <FaChevronLeft />
       </button>
-      <button onClick={handleNext}>
+      <button onClick={handleNext} aria-label='Next notices'>
         <FaChevronRight />
       </button>
     </div>
