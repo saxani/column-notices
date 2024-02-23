@@ -1,5 +1,4 @@
-import Notices from './components/Notices';
-import './App.css';
+import Notices from './Notices';
 
 function App() {
   return (

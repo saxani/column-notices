@@ -98,8 +98,6 @@ const Notices = () => {
         tempNotices.push(doc.data());
       });
 
-      console.log(tempNotices);
-
       setNotices(tempNotices);
       setLoading(false);
     } catch (e) {
