@@ -56,7 +56,7 @@ Using any development environment you are comfortable with, complete the require
 
 ### Testing
 
-- [ ] Write tests for the components and utilities in the application
+- [x] Write tests for the components and utilities in the application
 
 ### Bonus (Optional)
 
