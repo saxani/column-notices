@@ -1,0 +1,43 @@
+@import './colors';
+
+.wrapper {
+  height: 100vh;
+  background-color: $light-grey;
+  padding: 40px;
+
+  .content {
+    font-size: 18px;
+    background-color: $white;
+    border: 1px solid $mid-grey;
+    border-radius: 5px;
+    padding: 40px 40px 100px;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .button {
+    margin: 0 0 20px;
+    border-radius: 5px;
+  }
+
+  .input {
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-family: Graphik;
+    padding: 7px;
+  }
+  .smallInput {
+    height: 30px;
+  }
+
+  .largeInput {
+    height: 150px;
+  }
+}

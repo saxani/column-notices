@@ -1,3 +1,12 @@
+@import 'colors';
+
+.row {
+  &:hover {
+    cursor: pointer;
+    background-color: $light-grey;
+  }
+}
+
 .contentWrapper {
   .content {
     white-space: nowrap;
