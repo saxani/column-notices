@@ -1,5 +1,11 @@
 # Column Frontend Exercise
 
+## Shaun's Notes
+
+Unit testing is an area I could definitely approve upon and I encountered difficulties with debounce and getting Firebase data. I was trying to use mock timers (for debounce) and the msw npm library for getting mock data for firebase. I couldn't get bugs solved in a reasonable amount of time, though I still may spend more time on it to try to figure it out (msw is throwing known errors immediately).
+
+## Overview
+
 Your task is to create a public notice search application using React. The application should allow users to search for a notice by title and display relevant information. The primary goal is to demonstrate your proficiency in React, state management, and asynchronous data fetching via Firestore.
 
 Implementation of the exercise should take no more than 3 hours. Feel free to look up documentation and API references, but please work on the solution on your own.
