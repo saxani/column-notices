@@ -1,10 +1,15 @@
 @import './colors';
+@import './media';
 
 .wrapper {
   border-collapse: collapse;
   background-color: #fff;
   table-layout: fixed;
   width: 100%;
+
+  @include small {
+    font-size: 14px;
+  }
 
   th,
   td {

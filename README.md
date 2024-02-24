@@ -2,9 +2,9 @@
 
 ## Shaun's Notes
 
-I wanted to match the design of the notice list to what already exists (from your marketing pages on the website). So rather than using MUI (my preference) or another component library, I custom styled...which isn't perfect yet (table box shadow + border needs to be cleaned up). But this probably took me more time. But not as much time as unit testing!
+Note: This is a cleaned up branch fixing bugs, incorporating styling for different viewports, and refactoring the code so it's a bit more clean. For the original submission (accomplished in about 3 hours), see the #first-pass branch.
 
-In my bonus-features branch I will clean up dealing with notice list requests that are out of bounds.
+I wanted to match the design of the notice list to what already exists (from what I can see from your marketing pages on the website). So rather than using MUI (my preference) or another component library, I custom styled...which isn't perfect yet (table box shadow + border needs to be cleaned up). But this probably took me more time.
 
 Unit testing is an area I could definitely approve upon and I encountered difficulties with debounce and getting Firebase data. I was trying to use mock timers (for debounce) and the msw npm library for getting mock data for firebase. I couldn't get bugs solved in a reasonable amount of time, though I still may spend more time on it to try to figure it out (msw is throwing known errors immediately, it has something to do with how Jest is configured).
 
@@ -64,9 +64,9 @@ Using any development environment you are comfortable with, complete the require
 
 ### Bonus (Optional)
 
-- [ ] Add a filter to search by date of publication
-- [ ] Add routing to view a single notice
-- [ ] Add a form to add new notices with a title, publication date, and content
+- [x] Add a filter to search by date of publication
+- [x] Add routing to view a single notice
+- [x] Add a form to add new notices with a title, publication date, and content
 
 ## Submission
 

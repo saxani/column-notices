@@ -1,17 +1,33 @@
 @import './colors';
+@import './media';
 
 .wrapper {
   padding: 15px;
   background-color: $light-grey;
   border-bottom: 1px solid $mid-grey;
+  display: flex;
+  justify-content: space-between;
+
+  @include small {
+    flex-direction: column;
+  }
 
   .inputWrapper {
     display: flex;
     height: 30px;
-    max-width: 400px;
+    background-color: $white;
     border: solid 1px $mid-grey;
     border-radius: 5px;
-    background-color: $white;
+
+    input {
+      box-sizing: border-box;
+      height: 100%;
+      border: none;
+      flex: 1;
+      &:focus {
+        outline: none;
+      }
+    }
 
     .icon {
       width: 28px;
@@ -20,16 +36,76 @@
       align-items: center;
       justify-content: center;
     }
+  }
 
-    .input {
-      box-sizing: border-box;
-      height: 100%;
-      flex: 1;
-      border: none;
+  .leftSide {
+    display: flex;
 
-      &:focus {
-        outline: none;
+    @include medium {
+      flex-direction: column;
+    }
+
+    .search {
+      display: flex;
+      width: 500px;
+
+      @include small {
+        width: 100%;
       }
+    }
+
+    .dateWrapper {
+      margin-left: 15px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      @include medium {
+        margin-left: 0;
+        margin-top: 5px;
+        flex-wrap: wrap;
+      }
+
+      .calendar {
+        position: absolute;
+        top: 30px;
+        background-color: white;
+        border: 1px solid $mid-grey;
+
+        .calHeading {
+          padding: 10px 20px;
+          text-transform: capitalize;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      .date {
+        margin-left: 5px;
+        .dateInput {
+          margin-left: 5px;
+          width: 110px;
+          font-size: 11px;
+        }
+        .trash {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    height: 30px;
+    padding: 0 20px;
+    border-radius: 5px;
+
+    @include small {
+      margin-left: 0;
+      margin-top: 5px;
+      width: 150px;
     }
   }
 }
