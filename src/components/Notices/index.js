@@ -9,15 +9,15 @@ import {
   getDocs,
   where,
 } from 'firebase/firestore';
-import { db } from '../helpers/db'; // Import this line to use the Firestore database connection
+import { db } from '../../helpers/db'; // Import this line to use the Firestore database connection
 
-import Loading from './Loading';
-import Error from './Error';
-import SearchBar from './SearchBar';
+import Loading from '../Loading';
+import Error from '../Error';
+import SearchBar from '../SearchBar';
 import NoticeList from './NoticeList';
-import GetMore from './GetMore';
+import GetMore from '../GetMore';
 
-import noticeStyles from '../styles/notices.module.scss';
+import noticeStyles from '../../styles/notices.module.scss';
 
 /* This component has gotten too massive and if I had more time, I'd be splitting this into helper functions, but the async data fetching and state updating gets a bit more complex */
 const Notices = () => {
@@ -66,17 +66,13 @@ const Notices = () => {
 
       const q = query(collection(db, 'notices'), ...conditions);
       getNotices(q);
+    } else {
+      getFirstNotices();
     }
   };
 
   // Setting up a query for the next ten documents
   function handleNext() {
-    if (!lastVisible) {
-      setOutOfData(true);
-      return;
-    }
-
-    setOutOfData(false);
     const next = query(
       collection(db, 'notices'),
       orderBy('publicationDate', 'desc'),
@@ -92,13 +88,6 @@ const Notices = () => {
   // I've debugged and it seems like an issue with using endBefore() always wants to go to first in the list
   // But I'm sure it's user error somehow
   function handlePrevious() {
-    if (!firstVisible) {
-      setOutOfData(true);
-      return;
-    }
-
-    setOutOfData(false);
-
     const previous = query(
       collection(db, 'notices'),
       orderBy('publicationDate', 'desc'),
@@ -124,6 +113,13 @@ const Notices = () => {
   async function getNotices(q) {
     try {
       const documentSnapshots = await getDocs(q);
+
+      if (documentSnapshots.docs.length == 0) {
+        setOutOfData(true);
+        return;
+      }
+
+      setOutOfData(false);
 
       setFirstVisible(documentSnapshots.docs[0]);
       setLastVisible(documentSnapshots.docs[documentSnapshots.docs.length - 1]);
@@ -178,7 +174,7 @@ const Notices = () => {
           dateTo={dateTo}
         />
         <NoticeList notices={notices} />
-        {outOfData && <Error text='No more data! Refresh screen k thx!' />}
+        {outOfData && <Error text='No more notices!' />}
         <GetMore handleNext={handleNext} handlePrevious={handlePrevious} />
       </div>
     </div>

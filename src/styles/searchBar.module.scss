@@ -1,4 +1,5 @@
 @import './colors';
+@import './media';
 
 .wrapper {
   padding: 15px;
@@ -7,64 +8,89 @@
   display: flex;
   justify-content: space-between;
 
-  .dateWrapper {
-    margin-left: 15px;
-    position: relative;
+  @include small {
+    flex-direction: column;
+  }
 
-    .calendar {
-      position: absolute;
-      background-color: white;
-      border: 1px solid $mid-grey;
+  .inputWrapper {
+    display: flex;
+    height: 30px;
+    background-color: $white;
+    border: solid 1px $mid-grey;
+    border-radius: 5px;
 
-      .calHeading {
-        padding: 10px 20px;
-        text-transform: capitalize;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-
-    .dateInput {
-      border: solid 1px $mid-grey;
-      width: 110px;
-      height: 28px;
-      border-radius: 5px;
-      margin-left: 10px;
-
+    input {
+      box-sizing: border-box;
+      height: 100%;
+      border: none;
+      flex: 1;
       &:focus {
         outline: none;
       }
+    }
+
+    .icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
   .leftSide {
     display: flex;
 
-    .inputWrapper {
-      display: flex;
-      width: 400px;
-      height: 30px;
-      background-color: $white;
-      border: solid 1px $mid-grey;
-      border-radius: 5px;
+    @include medium {
+      flex-direction: column;
+    }
 
-      .icon {
-        width: 28px;
-        height: 28px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .search {
+      display: flex;
+      width: 500px;
+
+      @include small {
+        width: 100%;
+      }
+    }
+
+    .dateWrapper {
+      margin-left: 15px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      @include medium {
+        margin-left: 0;
+        margin-top: 5px;
       }
 
-      .input {
-        box-sizing: border-box;
-        height: 100%;
-        flex: 1;
-        border: none;
+      .calendar {
+        position: absolute;
+        top: 30px;
+        background-color: white;
+        border: 1px solid $mid-grey;
 
-        &:focus {
-          outline: none;
+        .calHeading {
+          padding: 10px 20px;
+          text-transform: capitalize;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      .date {
+        margin-left: 5px;
+        .dateInput {
+          margin-left: 5px;
+          width: 110px;
+          font-size: 11px;
+        }
+        .trash {
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
@@ -74,5 +100,11 @@
     height: 30px;
     padding: 0 20px;
     border-radius: 5px;
+
+    @include small {
+      margin-left: 0;
+      margin-top: 5px;
+      width: 150px;
+    }
   }
 }

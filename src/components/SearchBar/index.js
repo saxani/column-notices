@@ -5,7 +5,8 @@ import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 import Calendar from './Calendar';
-import searchBarStyles from '../styles/searchBar.module.scss';
+import DateInput from './DateInput';
+import searchBarStyles from '../../styles/searchBar.module.scss';
 
 // Passing in the function to actually do the searching for title matches
 // Because of debounce, only called every 500ms
@@ -28,7 +29,9 @@ const SearchBar = ({ handleSearch, handleDateChange, dateFrom, dateTo }) => {
   return (
     <div className={searchBarStyles.wrapper}>
       <div className={searchBarStyles.leftSide}>
-        <div className={searchBarStyles.inputWrapper}>
+        <div
+          className={`${searchBarStyles.inputWrapper} ${searchBarStyles.search}`}
+        >
           <span className={searchBarStyles.icon}>
             <FaSearch />
           </span>
@@ -40,25 +43,22 @@ const SearchBar = ({ handleSearch, handleDateChange, dateFrom, dateTo }) => {
           />
         </div>
         <div className={searchBarStyles.dateWrapper}>
-          Filter by date:
-          <input
-            onChange={() => {}}
-            className={searchBarStyles.dateInput}
-            placeholder='From'
-            value={dateFrom != '' ? new Date(dateFrom).toDateString() : ''}
-            onClick={() => {
-              handleShowCal(showCal === 'from' ? '' : 'from');
-            }}
+          <span>Filter by date: </span>
+          <DateInput
+            date={dateFrom}
+            range={'from'}
+            handleShowCal={handleShowCal}
+            handleDateChange={handleDateChange}
+            showCal={showCal}
           />
-          <input
-            onChange={() => {}}
-            className={searchBarStyles.dateInput}
-            placeholder='To'
-            value={dateTo != '' ? new Date(dateTo).toDateString() : ''}
-            onClick={() => {
-              handleShowCal(showCal === 'to' ? '' : 'to');
-            }}
+          <DateInput
+            date={dateTo}
+            range={'to'}
+            handleShowCal={handleShowCal}
+            handleDateChange={handleDateChange}
+            showCal={showCal}
           />
+
           {showCal != '' && (
             <Calendar
               handleShowCal={handleShowCal}

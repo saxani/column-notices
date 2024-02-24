@@ -4,7 +4,7 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import dayjs from 'dayjs';
 import { FaRegWindowClose } from 'react-icons/fa';
 
-import searchBarStyles from '../styles/searchBar.module.scss';
+import searchBarStyles from '../../styles/searchBar.module.scss';
 
 const Calendar = ({
   handleShowCal,
