@@ -2,9 +2,9 @@
 
 ## Shaun's Notes
 
-I wanted to match the design of the notice list to what already exists (from your marketing pages on the website). So rather than using MUI (my preference) or another component library, I custom styled...which isn't perfect yet (table box shadow + border needs to be cleaned up). But this probably took me more time. But not as much time as unit testing!
+Note: This is the branch showing my original submission after about 3 hours of work. The #main branch has all bonus features, bug fixes, and enhancements.
 
-In my bonus-features branch I will clean up dealing with notice list requests that are out of bounds.
+I wanted to match the design of the notice list to what already exists (from your marketing pages on the website). So rather than using MUI (my preference) or another component library, I custom styled...which isn't perfect yet (table box shadow + border needs to be cleaned up). But this probably took me more time. But not as much time as unit testing!
 
 Unit testing is an area I could definitely approve upon and I encountered difficulties with debounce and getting Firebase data. I was trying to use mock timers (for debounce) and the msw npm library for getting mock data for firebase. I couldn't get bugs solved in a reasonable amount of time, though I still may spend more time on it to try to figure it out (msw is throwing known errors immediately, it has something to do with how Jest is configured).
 
